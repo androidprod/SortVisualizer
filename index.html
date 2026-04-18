@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>【シンプル】ソートビジュアライザー</title>
+  <meta name="description" content="シンプル操作のソート可視化ツール。機械音でソートの比較を聞けます。バブルソート・選択ソートに対応。音量/速度調整可能。">
+  <meta name="keywords" content="ソート, ビジュアライザー, ピアノ, アルゴリズム, バブルソート, 選択ソート">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="【シンプル】ソートビジュアライザー">
+  <meta property="og:description" content="視覚と音でソートを学べるシンプルツール。音量や速度を調整して最適な再生体験を得られます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sortvisualizer.pages.dev/">
+  <meta property="og:image" content="https://sortvisualizer.pages.dev/ogp.png">
+  <link rel="canonical" href="https://sortvisualizer.pages.dev/">
+
+  <!-- Preload CSS and JS for faster first render -->
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  <link rel="preload" href="script.js" as="script">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ソート × ピアノ ビジュアライザー",
+    "url": "https://sortvisualizer.pages.dev/",
+    "description": "シンプル操作のソート可視化ツール。ピアノ音でソートの比較を聞けます。"
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>【シンプル】ソートビジュアライザー</h1>
+      <p class="description">このツールはソートアルゴリズムを視覚と機械音で学べるシンプルなビジュアライザーです。シャッフルしてから「ソート」を押すと、比較中のバーが赤く光り、対応する音が再生されます。</p>
+    </header>
+
+    <div class="controls">
+      <button id="shuffle">シャッフル</button>
+      <button id="sort">ソート</button>
+      <button id="pauseResume" disabled>一時停止</button>
+      <select id="algorithm">
+        <option value="bubble">バブルソート</option>
+        <option value="selection">選択ソート</option>
+      </select>
+      <label class="range">速度
+        <input id="speed" type="range" min="1" max="200" value="60">
+      </label>
+      <label class="range">音量
+        <input id="volume" type="range" min="0" max="100" value="60">
+      </label>
+      <label class="checkbox"><input id="soundToggle" type="checkbox" checked> サウンド</label>
+    </div>
+
+    <div id="visualizer" class="visualizer"></div>
+
+    <footer class="note">バーをクリックして個別に音を鳴らせます。</footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

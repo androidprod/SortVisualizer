@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your full sitemap URL when publishing
+Sitemap: https://sortvisualizer.pages.dev/sitemap.xml

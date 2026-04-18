@@ -1,0 +1,24 @@
+:root{
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+  --accent:#4a90e2;
+  --muted:#7b8a99;
+}
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto,'Noto Sans JP',sans-serif}
+body{margin:0;background:var(--bg);color:#0b1b2b}
+.container{max-width:1000px;margin:24px auto;padding:20px}
+header h1{margin:0 0 12px;font-size:20px}
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.controls button, .controls select{background:var(--panel);border:1px solid #e2e8ee;padding:8px 12px;border-radius:8px;cursor:pointer}
+.controls .range{display:flex;align-items:center;gap:8px}
+.controls input[type=range]{width:140px}
+.controls .checkbox{display:flex;align-items:center;gap:6px}
+.visualizer{background:transparent;height:360px;border-radius:10px;padding:10px;display:flex;align-items:end;gap:4px}
+.bar{flex:1 1 auto;background:linear-gradient(180deg,var(--accent),#2b6fb1);border-radius:4px;transition:height 120ms;cursor:pointer;display:flex;align-items:flex-end;justify-content:center}
+.bar.active{box-shadow:0 6px 18px rgba(74,144,226,0.18);}
+.bar.compare{background:linear-gradient(180deg,#ff6b6b,#e64545);box-shadow:0 8px 22px rgba(230,69,69,0.18);}
+.bar.compare .label{color:#fff}
+.bar .label{font-size:10px;color:white;padding:4px}
+.note{margin-top:10px;color:var(--muted);font-size:13px}
+
+@media (max-width:600px){.visualizer{height:220px}}
